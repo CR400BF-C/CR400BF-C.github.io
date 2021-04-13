@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <script>
-function myFunction() {
-    document.getElementById("demo").innerHTML = "段落已被更改。";
-}
-</script>
-</head>
+<title>数字谜语</title>
+  <body>
+    <h2>1,2,3,4,5(打一成语)</h2>
+    <p>你的答案是：</p>
+    <input id="numb">
+    <button type="button" onclick="myFunction()">提交</button>
+    <p id="demo"></p>
 
-<body>
+    <script>
+    function myFunction() {
+      var x, text;
+      x = document.getElementById("numb").value;
 
-<h2>Head 中的 JavaScript</h2>
-
-<p id="demo">一个段落。</p>
-
-<button type="button" onclick="myFunction()">试一试</button>
-</body>
+      if (x = "屈指可数") {
+        text = "恭喜你答对了！"；
+      } else {
+        text = "回答错误！";
+      }
+      document.getElementById("demo").innerHTML = text;
+    }
+    </script>
+  </body>
 </html>
