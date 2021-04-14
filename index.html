@@ -1,25 +1,46 @@
 <!DOCTYPE html>
 <html>
-<title>数字谜语</title>
-  <body>
-    <h2>1,2,3,4,5(打一成语)</h2>
-    <p>你的答案是：</p>
-    <input id="numb">
-    <button type="button" onclick="myFunction()">提交</button>
-    <p id="demo"></p>
+<title> 猜谜 </title>
+	<body>
+	<style>
+	
+	body {
+		background-color:lightblue;
+		}
+	h1 {
+		text-align:center;
+		color:white;
+	}
+	p {
+		text-align:center;
+		color:white;
+	}
+	
+	</style>
+	<h1>1,2,3,4,5(打一成语)</h1>
+	<p> 输入你的答案 </p>
+	<input id="numb">
+	<center><button type="button" onclick="myFunction()">提交</button></center>
+	<p id="demo"></p>
+	
+	
+	<script>
+	/*一直不能居中 苦恼...*/
+	function myFunction() {
+		var x, text;
 
-    <script>
-    function myFunction() {
-      var x, text;
-      x = document.getElementById("numb").value;
-
-      if (x == "屈指可数") {
-        text = "恭喜你答对了！";
-      } else {
-        text = "回答错误！";
-      }
-      document.getElementById("demo").innerHTML = text;
-    }
-    </script>
-  </body>
+		x = document.getElementById("numb").value;
+	
+  
+	if (x == "屈指可数") {
+			text = "恭喜你回答正确！";
+	} else {
+			text = "回答错误！";
+	}
+			document.getElementById("demo").innerHTML = text;
+	}
+	</script>
+	
+	
+	</body>
 </html>
