@@ -1,46 +1,360 @@
-<!DOCTYPE html>
-<html>
-<title> 猜谜 </title>
-	<body>
-	<style>
-	
-	body {
-		background-color:lightblue;
-		}
-	h1 {
-		text-align:center;
-		color:white;
-	}
-	p {
-		text-align:center;
-		color:white;
-	}
-	
-	</style>
-	<h1>1,2,3,4,5(打一成语)</h1>
-	<p> 输入你的答案 </p>
-	<input id="numb">
-	<center><button type="button" onclick="myFunction()">提交</button></center>
-	<p id="demo"></p>
-	
-	
-	<script>
-	/*一直不能居中 苦恼...*/
-	function myFunction() {
-		var x, text;
+<!doctype html>
+<html lang="zh-cn">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-		x = document.getElementById("numb").value;
-	
-  
-	if (x == "屈指可数") {
-			text = "恭喜你回答正确！";
-	} else {
-			text = "回答错误！";
-	}
-			document.getElementById("demo").innerHTML = text;
-	}
-	</script>
-	
-	
-	</body>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <title>漫漫驴途</title>
+  </head>
+  <body>
+    <nav class = "navbar-expaned-md navbar-light bg-light fixed-top">
+			<div class = "container-fluid">
+				<button class = "navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" >
+					<span class = "navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id = "navbarResponsive">
+					<ul class = "navbar-nav ml-auto">
+						<li class ="nav-item">
+							<a class="nav-link" href="#">户外知识分享</a>
+						</li>
+						<li class ="nav-item">
+							<a class="nav-link" href="#">户外俱乐部推荐</a>
+						</li>
+						<li class ="nav-item">
+							<a class="nav-link" href="#">户外新闻</a>
+						</li>
+						<li class ="nav-item">
+							<a class="nav-link" href="#">户外APP推荐</a>
+						</li>
+						<li class ="nav-item">
+							<a class="nav-link" href="#">户外三大纪律</a>
+						</li>
+					</ul>
+			  </div>
+     </div>
+		</nav>
+<!-- 轮播图  -->
+<!--
+<div id = "slides" class = "carousel slide  m-auto" data-ride="carousel">
+  <ul class="carousel-indicatiors">
+    <li data-target = "#slides" data-slide-to = "0" class="active"></li>
+    <li data-target = "#slides" data-slide-to = "1"></li>
+    <li data-target = "#slides" data-slide-to = "2"></li>
+  </ul>
+  <div class = "carousel-inner">
+    <div class = "carousel-item active">
+      <img src = "mountain_dongling.jpg" class = "d-block w-100">
+      <div class = "carousel-caption">
+        <h1 class = "display-2">漫漫路途</h1>
+        <h3>一个专门面向新驴友的户外网站 </h3>
+
+
+        <button type = "button" class = "btn btn-primary btn-lg"> 新驴必看！ </button>
+      </div>
+    </div>
+    <div class = "carousel-item">
+      <img src = "mountain_taibai.jpeg" class = "d-block w-100">
+    </div>
+    <div class = "carousel-item">
+      <img src = "mountain_hua.jpg" class = "d-block w-100">
+    </div>
+    </div>
+  </div>
+</div>
+ -->
+ <div id="slides" class="carousel slide" data-ride="carousel">
+ 	<ul class="carousel-indicators">
+ 		<li data-target="#slides" data-slide-to="0" class="active"></li>
+ 			<li data-target="#slides" data-slide-to="1"></li>
+ 				<li data-target="#slides" data-slide-to="2"></li>
+ 			</ul>
+ 			<div class="carousel-inner">
+ 				<div class="carousel-item active col-lg-12">
+ 					<img src="dongling1.jpg">
+ 					<div class="carousel-caption">
+ 						<h1 class="display-2">漫漫驴途</h1>
+ 						<h3>一个专门为新驴友打造的户外网站</h3>
+ 						<button type="button" class="btn btn-outline-light btn-lg">新驴必看！</button>
+
+ 					</div>
+ 				</div>
+ 				<div class="carousel-item  col-lg-12">
+ 					<img src="taibai1.jpg">
+ 				</div>
+ 				<div class="carousel-item  col-lg-12">
+ 					<img src="siguniang1.jpeg">
+ 				</div>
+ 			</div>
+ 		</div>
+
+<!-- JUMBOTRON -->
+<!-- 容器 -->
+<div class = "container-fluid height:500px;margin-top:100px">
+  <div class = "row jumbotron">
+    <div class = "col-xs-12 col-xs-12 col-md-9 col-lg-9 col-xl-10">
+      <h2 class = "display-3 text-center" >  我们的信仰是大山！ </h2>
+</div>
+</div>
+</div>
+
+
+
+<!-- two column section -->
+
+<!-- 固定背景 -->
+<figure>
+<div class = "fixed-wrap">
+  <div id = "fixed">
+  </div>
+</div>
+</figure>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+<!--户外知识分享 -->
+<div class = "container-fluid">
+  <div class = "row text-center">
+    <div class = "col-12">
+<h1 class = "display-4"> 户外知识分享 </h1>
+<div class = "container-fluid">
+  <div class = "row">
+    <div class = "col-lg-8">
+      <h2> 第一次参加两天一夜徒步露营，我需要准备哪些装备 </h2>
+      <h4>作者：小米</h4>
+      <p> 要去露营啊！需要准备哪些装备？
+这是我每次活动带新人，遇到最多的一个问题了。
+我身边的朋友不缺装备控，本文不是要跟大家分享多专业的户外装备知识。
+而是希望通过自身经验，在户外选择装备时所走的弯路。给大家提供最容易理解的装备知识。
+所以决定写下这篇帖子，提供给准备入坑户外的新朋友参考。
+户外即生活，生活无非衣食住行。
+户外天气环境多变，所用装备自有一些考究，但户外本身来源于生活，TA并不复杂。
+所以我们出门前按照这几个方向去准备就好了。 </p>
+
+      <br>
+      <a href = "#" class = "btn btn-primary"> 了解详情 </a>
+    </div>
+    <div class = "col-lg-4">
+      <img src = "luying.jpeg" class = "img-fluid">
+    </div>
+  </div>
+</div>
+<hr class = "my-4">
+<div class = "container-fluid">
+  <div class = "row">
+    <div class = "col-lg-8">
+      <h2> 如何开始你的第一次户外徒步？ </h2>
+      <h4>作者：苏然的户外旅行</h4>
+      <p> 户外新人如何开启自己的第一场徒步之旅？
+是不是要买很专业的装备？
+是不是要找个组织报名？
+哪条线路比较适合自己？
+…
+等等，也许作为新人会有很多疑问。
+个人编写了一些内容，相信能够回答这些问题。 </p>
+
+      <br>
+      <a href = "#" class = "btn btn-primary"> 了解详情 </a>
+    </div>
+    <div class = "col-lg-4">
+      <img src = "huwai.jpg" class = "img-fluid">
+    </div>
+  </div>
+</div>
+<hr class = "my-4">
+<!-- 户外俱乐部推荐 -->
+<div class = "container-fluid">
+  <div class = "row text-center">
+    <div class = "col-12">
+      <h1 class = "display-4"> 户外俱乐部推荐 </h1>
+    </div>
+  </div>
+</div>
+<!-- 卡片 -->
+<div class="container-fluid padding">
+	<div class="row padding">
+		<div class="col-md-4">
+			<div class="card">
+				<img class="card-img-top" src="jiandanhuwai.jpg">
+				<div class="card-body">
+					<h4 class="card-title">简单户外</h4>
+					<p class="card-text">简简单单的去户外行走吧。呼吸清新的空气，减缓生活压力，结交志同道合的朋友。</p>
+          <!--
+        	<a href="#" class="btn btn-outline-secondary">See Profile</a>
+        -->
+      	</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="card">
+				<img class="card-img-top" src="mancaohuwai.jpg">
+				<div class="card-body">
+					<h4 class="card-title">蔓草户外</h4>
+					<p class="card-text">一群高校毕业的北漂， 一群爱好旅行的朋友， 一群学习交流的良师， 一群喜欢娱乐的玩伴， 一次户外偶然的相遇， 一点情怀相互的交融， 诞生了一个专属于年轻人的社交圈， 形成了一个专属于本硕博的朋友圈。
+             这就是蔓草户外。</p>
+					<!--
+          <a href="#" class="btn btn-outline-secondary">See Profile</a>
+        -->
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="card">
+				<img class="card-img-top" src="beijingtubuzhe.jpg">
+				<div class="card-body">
+					<h4 class="card-title">北京徒步者</h4>
+					<p class="card-text">你的信仰是什么，我的信仰是大山。</p>
+          <!--
+					<a href="#" class="btn btn-outline-secondary">See Profile</a>
+        -->
+      	</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 户外新闻 -->
+<div class = "container-fluid">
+  <div class = "row text-center">
+    <div class = "col-12">
+<h1 class = "display-4"> 户外新闻</h1>
+<div class = "container-fluid">
+  <div class = "row">
+    <div class = "col-lg-6">
+      <h2> 甘肃白银百公里越野赛遭遇极端天气已有21人遇难 </h2>
+      <p> 5月22日，甘肃一山地马拉松赛遭遇极端天气。截至23日早上8点，共搜救接回参赛人员151人，其中8人轻伤，在医院接受救治。21名参赛人员找到时已失去生命体征。其中包括刚刚在宁波江南百英里赛夺冠的国内越野跑顶尖选手
+        梁晶在比赛中不幸遇难。 </p>
+
+      <br>
+      <a href = "#" class = "btn btn-primary"> 了解详情 </a>
+    </div>
+    <div class = "col-lg-6">
+      <img src = "malasong.jpg" class = "img-fluid">
+    </div>
+  </div>
+</div>
+<hr class = "my-4">
+<div class = "container-fluid">
+  <div class = "row">
+    <div class = "col-lg-6">
+      <h2> 2021中国休闲度假大会即将开幕，精彩内容抢先看 </h2>
+      <p> 5月24日-26日，以“挖掘休闲内循环，推进文旅大循环”为主题的2021中国休闲度假大会即将在山东省东营市举办。本次大会由中国旅游协会、东营市人民政府、全国休闲标准化技术委员会主办，旨在贯彻落实黄河流域生态保护和高质量发展的国家战略，旨在整合各方资源，助推东营大力实施“旅游富民”三年行动计划和“打造黄河入海文化旅游目的地”要求，旨在以创新、可持续的休闲度假产业为引领，实现社会经济文化全面发展。大会将从明晰发展思路、研究发展模式、对接发展资源、搭建发展平台入手，开创“十四五”前期休闲度假产业新局面。 </p>
+
+      <br>
+      <a href = "#" class = "btn btn-primary"> 了解详情 </a>
+    </div>
+    <div class = "col-lg-6">
+      <img src = "huwai.jpg" class = "img-fluid">
+    </div>
+  </div>
+</div>
+<hr class = "my-4">
+
+<!-- welcome section -->
+
+
+
+    </div>
+  </div>
+</div>
+<!-- 户外APP推荐 -->
+<div class = "container-fluid">
+  <div class = "row text-center">
+    <div class = "col-12">
+      <h1 class = "display-4"> 户外APP推荐 </h1>
+    </div>
+  </div>
+</div>
+<div class="container-fluid padding">
+	<div class="row padding">
+    <div class="col-md-2">
+			<div class="card">
+				<div class="card-body">
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="card">
+				<img class="card-img-top" src="liangbulu.jpeg">
+				<div class="card-body">
+					<h4 class="card-title">两步路</h4>
+					<p class="card-text">两步路APP是一款专业的户外手机应用（含安卓和iOS版），为户外爱好者提供最专业的户外地图和导航功能、最精准的户外轨迹路线、最好玩的户外约伴活动、最丰富的户外互动社区、最优质的户外装备等。广泛应用于日常出行、旅行出游、规划线路、野外露营、徒步探险、户外勘探、户外救援、定向越野、溯溪登山、极限运动、运动记录分析、距离测量和海拔测量等。户外助手助您探索世界，安全回家。</p>
+					<a href="#" class="btn btn-outline-secondary">了解更多</a>
+				</div>
+			</div>
+		</div>
+    <div class="col-md-2">
+			<div class="card">
+				<div class="card-body">
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="card">
+				<img class="card-img-top" src="liuzhijiao.jpeg">
+				<div class="card-body">
+					<h4 class="card-title">六只脚</h4>
+					<p class="card-text">六只脚通过GPS轨迹记录仪记录户外自助游线路轨迹,航迹,航点,提供GPS轨迹分享,轨迹下载,旅游景区景点及GPS设备资讯,感受你在户外旅游中的乐趣,分享您在自助游线路的轨迹路线。</p>
+					<a href="#" class="btn btn-outline-secondary">了解更多</a>
+				</div>
+			</div>
+		</div>
+    <div class="col-md-2">
+			<div class="card">
+				<div class="card-body">
+				</div>
+			</div>
+		</div>
+    <!-- 三大纪律 -->
+    <div class = "container-fluid">
+      <div class = "row text-center">
+        <div class = "col-12">
+          <p class = "display-4"> 户外三大纪律 <p>
+          </div>
+        </div>
+      </div>
+
+    <div class = "container-fluid">
+      <div class = "row text-center">
+        <div class = "col-xs-12 col-sm-6 col-md-4">
+          <i class = "fas fa-code"></i>
+          <h3>无自律 不爬山！</h3>
+        </div>
+          <div class = "col-xs-12 col-sm-6 col-md-4">
+            <i class = "fas fa-code"></i>
+            <h3>无健身 不爬山！</h3>
+          </div>
+            <div class = "col-xs-12 col-sm-6 col-md-4">
+              <i class = "fas fa-code"></i>
+              <h3>无团队 不爬山！</h3>
+            </div>
+          </div>
+        </div>
+<!-- footer -->
+
+<footer>
+	<div class="container-fluid padding">
+		<div class="row text-center">
+			<div class="col-md-4">
+				<hr class="light">
+				<p>意见反馈</p>
+			</div>
+			<div class="col-md-4 text-center">
+			<hr class="light">
+			<p>联系我们</p>
+		</div>
+		<div class="col-md-4 text-center">
+		<hr class="light">
+			<p>友情链接</p>
+	</div>
+
+</div>
+</div>
+</footer>
+
+</body>
 </html>
